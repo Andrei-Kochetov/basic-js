@@ -14,11 +14,16 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function createDreamTeam(arr) {
-
-  return arr.filter((el)=> typeof el === 'string').sort((a,b)=> a-b).map((el)=> el[0].toUpperCase()).join('');
+  if(Array.isArray(arr)){
+    return arr.filter((el)=> typeof el === 'string').map((el)=> el.trim()[0].toUpperCase()).sort().join('');
+  } else{
+    return false;
+  }
+  
 
 }
-
+/* console.log(createDreamTeam(['Henry', 'Peter', 'Amber', 'Jordan', 'Lauren', 'Andrew', 'Emma', 'Gregory', 'Kayla', 'Deborah']))
+'AADEGHJKLP' */
 module.exports = {
   createDreamTeam
 };
