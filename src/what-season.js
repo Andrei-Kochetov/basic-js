@@ -20,7 +20,7 @@ function getSeason(date) {
     if( mounth === 1 && date.getDate() > 28 ){
       throw error.message;
     }
-    if(mounth === 11 || mounth < 2){
+    if(mounth === 11 || mounth < 2){ 
       return 'winter';
     } else if(mounth < 5){
       return 'spring';
